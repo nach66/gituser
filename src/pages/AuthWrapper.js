@@ -3,11 +3,15 @@ import { useAuth0 } from '@auth0/auth0-react';
 import loadingGif from '../images/preloader.gif';
 import styled from 'styled-components';
 function AuthWrapper({ children }) {
-  const { isLoading, error } = useAuth0();
+  const { isLoading, error, isAuthenticated, user } = useAuth0();
+  console.log(isAuthenticated);
+  console.log(user);
+  
   if (isLoading) {
     return (
       <Wrapper>
-        <img src={loadingGif} alt='spinner' />
+        <h1>loading...</h1>
+        {/* <img src={loadingGif} alt='spinner' /> */}
       </Wrapper>
     );
   }
