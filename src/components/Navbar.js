@@ -16,14 +16,16 @@ const Navbar = () => {
     <Wrapper>
       {isUser && user.picture && <img src={user.picture} alt={user.name} />}
       {isUser && user.name && (
-        <h4> Welcome, 
-          <strong>{user.name.toUpperCase()}</strong>
+        <h4>
+          Welcome, <strong>{user.name.toUpperCase()}</strong>
         </h4>
       )}
       {isUser ? (
-        <button onClick={() => {logout({ 
-          returnTo: window.location.origin 
-        });}}>
+        <button
+          onClick={() => {
+            logout({ returnTo: window.location.origin });
+          }}
+        >
           logout
         </button>
       ) : (
@@ -31,7 +33,6 @@ const Navbar = () => {
       )}
     </Wrapper>
   );
-
 };
 
 const Wrapper = styled.nav`
